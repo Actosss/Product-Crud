@@ -1,1 +1,21 @@
-<p>form works!</p>
+<div class="card mt-3">
+    <div class="card-body">
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label class="col-md-4">User Id</label>
+                <input type="number" class="form-control" formControlName="id" #id />
+
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Title</label>
+                <input type="title" class="form-control" formControlName="title" #title />
+
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary mr-1">Submit
+                </button>
+                <button class="btn btn-primary" (click)="clearForm()">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>

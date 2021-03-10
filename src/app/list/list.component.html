@@ -1,1 +1,28 @@
-<p>list works!</p>
+<div class="col">
+    <div *ngIf="products">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Text</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let prod of products | async">
+                    <td>{{ prod.id }}</td>
+                    <td>{{ prod.name }}</td>
+                    <td>{{ prod.title }}</td>
+                    <td>{{ prod.text }}</td>
+                    <td>
+                        <button class="btn btn-primary" (click)="editProduct(prod)">Edit</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary" (click)="deleteProduct(prod.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
